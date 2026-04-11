@@ -1,0 +1,1647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>First Christian Church | Harrison, Arkansas | Disciples of Christ</title>
+  <meta name="description" content="First Christian Church (Disciples of Christ) in Harrison, Arkansas. All are welcome at the Lord's table. Traditional worship Sundays at 9:00 AM, Sunday School at 10:00 AM, Contemporary worship at 11:00 AM." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ── CSS VARIABLES ─────────────────────────────────────── */
+    :root {
+      --navy:    #1e2d3d;
+      --navy-lt: #253548;
+      --cream:   #f5f0e8;
+      --cream-dk:#ede6d6;
+      --burgundy:#8b1a2b;
+      --burgundy-lt:#a82035;
+      --gold:    #c9a84c;
+      --text:    #2c2c2c;
+      --text-lt: #5a5a5a;
+      --white:   #ffffff;
+      --serif:   'Cormorant Garamond', Georgia, serif;
+      --sans:    'Jost', sans-serif;
+    }
+
+    /* ── RESET ─────────────────────────────────────────────── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--sans);
+      background: var(--white);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    a  { text-decoration: none; color: inherit; }
+
+    /* ── NAV ───────────────────────────────────────────────── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 3rem;
+      height: 72px;
+      background: rgba(30,45,61,0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+      transition: background 0.3s;
+    }
+    .nav-logo {
+      display: flex; align-items: center; gap: 0.75rem;
+    }
+    .nav-logo .logo-mark {
+      width: 44px; height: 44px;
+      flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .nav-logo .logo-text {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--white);
+      line-height: 1.25;
+      letter-spacing: 0.01em;
+    }
+    .nav-logo .logo-text small {
+      display: block;
+      font-size: 0.65rem;
+      font-family: var(--sans);
+      font-weight: 300;
+      color: var(--gold);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .nav-links {
+      display: flex; align-items: center; gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.8);
+      transition: color 0.2s;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute; bottom: -3px; left: 0; right: 0; height: 1px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transition: transform 0.25s;
+      transform-origin: left;
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover::after { transform: scaleX(1); }
+    .nav-cta {
+      background: var(--burgundy);
+      color: var(--white) !important;
+      padding: 0.5rem 1.4rem;
+      border-radius: 2px;
+      font-weight: 600 !important;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--burgundy-lt) !important; }
+    .nav-cta::after { display: none !important; }
+
+    .hamburger {
+      display: none;
+      flex-direction: column; gap: 5px; cursor: pointer;
+      background: none; border: none; padding: 4px;
+    }
+    .hamburger span {
+      display: block; width: 24px; height: 2px;
+      background: var(--white); transition: 0.3s;
+    }
+
+    /* ── HERO ──────────────────────────────────────────────── */
+    .hero {
+      position: relative;
+      height: 100vh; min-height: 600px;
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      /* 
+        ══════════════════════════════════════════════════════
+        📸 PHOTO PLACEHOLDER — HERO
+        Replace the background-color below with:
+          background-image: url('images/hero.jpg');
+          background-size: cover;
+          background-position: center;
+        Best photo: exterior of church building, or sanctuary
+        Suggested size: at least 1920×1080px
+        ══════════════════════════════════════════════════════
+      */
+      background-color: #2a3f52;
+      background-image: url('images/church-exterior.jpg');
+      background-size: cover;
+      background-position: center 40%;
+    }
+    .hero-bg::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(20,35,50,0.45) 0%,
+        rgba(20,35,50,0.6) 60%,
+        rgba(20,35,50,0.75) 100%
+      );
+    }
+    .hero-photo-label {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+      text-align: center; z-index: 1;
+      border: 2px dashed rgba(201,168,76,0.5);
+      padding: 1.5rem 2.5rem;
+      border-radius: 4px;
+      pointer-events: none;
+    }
+    .hero-photo-label p {
+      font-family: var(--sans);
+      font-size: 0.75rem;
+      color: rgba(201,168,76,0.8);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .hero-content {
+      position: relative; z-index: 2;
+      text-align: center;
+      padding: 0 1.5rem;
+      animation: fadeUp 1.2s ease both;
+    }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .hero-eyebrow {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 500;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(201,168,76,0.4);
+      padding: 0.35rem 1rem;
+      margin-bottom: 1.75rem;
+      border-radius: 2px;
+    }
+    .hero h1 {
+      font-family: var(--serif);
+      font-size: clamp(3rem, 7vw, 6.5rem);
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1.08;
+      letter-spacing: -0.01em;
+      margin-bottom: 0.5rem;
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--gold);
+    }
+    .hero-sub {
+      font-family: var(--serif);
+      font-size: clamp(1.1rem, 2.2vw, 1.5rem);
+      font-weight: 300;
+      font-style: italic;
+      color: rgba(255,255,255,0.75);
+      margin-bottom: 2.5rem;
+      letter-spacing: 0.02em;
+    }
+    .hero-info {
+      display: flex; align-items: center; justify-content: center;
+      gap: 2rem; flex-wrap: wrap;
+      margin-bottom: 2.5rem;
+    }
+    .hero-info-item {
+      text-align: center;
+    }
+    .hero-info-item .label {
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.2rem;
+    }
+    .hero-info-item .value {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      color: var(--white);
+      font-weight: 400;
+    }
+    .hero-divider {
+      width: 1px; height: 36px;
+      background: rgba(201,168,76,0.35);
+    }
+    .hero-btns {
+      display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;
+    }
+    .btn-primary {
+      background: var(--burgundy);
+      color: var(--white);
+      padding: 0.85rem 2.2rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      transition: background 0.2s, transform 0.2s;
+      border: 2px solid var(--burgundy);
+    }
+    .btn-primary:hover { background: var(--burgundy-lt); transform: translateY(-1px); }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      padding: 0.85rem 2.2rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      border: 2px solid rgba(255,255,255,0.5);
+      transition: border-color 0.2s, transform 0.2s;
+    }
+    .btn-outline:hover { border-color: var(--white); transform: translateY(-1px); }
+
+    .hero-scroll {
+      position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+      z-index: 2;
+      display: flex; flex-direction: column; align-items: center; gap: 0.4rem;
+    }
+    .hero-scroll span {
+      font-size: 0.6rem; letter-spacing: 0.15em; text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+    .scroll-line {
+      width: 1px; height: 40px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.5), transparent);
+      animation: scrollPulse 2s ease infinite;
+    }
+    @keyframes scrollPulse {
+      0%,100% { opacity: 0.5; transform: scaleY(1); }
+      50%      { opacity: 1;   transform: scaleY(1.2); }
+    }
+
+    /* ── WELCOME STRIP ─────────────────────────────────────── */
+    .welcome-strip {
+      background: var(--cream);
+      border-top: 3px solid var(--gold);
+      border-bottom: 3px solid var(--gold);
+      padding: 3.5rem 2rem;
+      text-align: center;
+    }
+    .welcome-strip p {
+      font-family: var(--serif);
+      font-size: clamp(1.3rem, 2.5vw, 2rem);
+      font-weight: 300;
+      font-style: italic;
+      color: var(--navy);
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.5;
+    }
+    .welcome-strip p strong {
+      font-style: normal;
+      font-weight: 600;
+      color: var(--burgundy);
+    }
+
+    /* ── SECTION COMMONS ───────────────────────────────────── */
+    section { padding: 6rem 2rem; }
+    .container { max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+    .section-title {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 300;
+      line-height: 1.15;
+      color: var(--navy);
+      margin-bottom: 1.25rem;
+    }
+    .section-title em { font-style: italic; color: var(--burgundy); }
+    .section-body {
+      font-size: 1rem;
+      line-height: 1.75;
+      color: var(--text-lt);
+      max-width: 560px;
+    }
+    .gold-rule {
+      width: 48px; height: 3px;
+      background: var(--gold);
+      margin-bottom: 1.5rem;
+      border-radius: 2px;
+    }
+
+    /* ── ABOUT ─────────────────────────────────────────────── */
+    #about { background: var(--white); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+    .about-img-wrap {
+      position: relative;
+      aspect-ratio: 4/5;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(30,45,61,0.15);
+    }
+    .about-img-wrap::before {
+      content: '';
+      position: absolute; inset: -12px -12px auto auto;
+      width: 80px; height: 80px;
+      border-top: 4px solid var(--gold);
+      border-right: 4px solid var(--gold);
+      z-index: 1;
+      border-radius: 0 4px 0 0;
+    }
+    .about-img-wrap::after {
+      content: '';
+      position: absolute; inset: auto auto -12px -12px;
+      width: 80px; height: 80px;
+      border-bottom: 4px solid var(--gold);
+      border-left: 4px solid var(--gold);
+      z-index: 1;
+      border-radius: 0 0 0 4px;
+    }
+    /* Photo placeholder */
+    .photo-placeholder {
+      width: 100%; height: 100%;
+      background: var(--cream-dk);
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 0.75rem; text-align: center; padding: 2rem;
+      border: 2px dashed rgba(139,26,43,0.2);
+    }
+    .photo-placeholder .ph-icon {
+      font-size: 2.5rem; opacity: 0.3;
+    }
+    .photo-placeholder .ph-title {
+      font-family: var(--serif);
+      font-size: 1rem;
+      color: var(--navy);
+      font-weight: 500;
+    }
+    .photo-placeholder .ph-note {
+      font-size: 0.7rem;
+      color: var(--text-lt);
+      line-height: 1.5;
+      max-width: 200px;
+    }
+    .photo-placeholder .ph-tag {
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--burgundy);
+      border: 1px solid var(--burgundy);
+      padding: 0.2rem 0.6rem;
+      border-radius: 2px;
+      opacity: 0.6;
+    }
+    /* To use real photo: replace <div class="photo-placeholder">...</div>
+       with: <img src="images/YOUR-PHOTO.jpg" alt="description" /> */
+
+    .about-content .section-body { margin-bottom: 2rem; }
+    .beliefs-list {
+      list-style: none;
+      display: flex; flex-direction: column; gap: 0.75rem;
+    }
+    .beliefs-list li {
+      display: flex; align-items: flex-start; gap: 0.75rem;
+      font-size: 0.95rem;
+      color: var(--text-lt);
+      line-height: 1.5;
+    }
+    .beliefs-list li::before {
+      content: '✦';
+      color: var(--gold);
+      font-size: 0.6rem;
+      margin-top: 0.35rem;
+      flex-shrink: 0;
+    }
+
+    /* ── WORSHIP ───────────────────────────────────────────── */
+    #worship { background: var(--navy); }
+    #worship .section-title { color: var(--white); }
+    #worship .section-label { color: var(--gold); }
+    #worship .section-body { color: rgba(255,255,255,0.65); max-width: 100%; }
+    .worship-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .service-cards {
+      display: flex; flex-direction: column; gap: 1rem; margin-top: 2rem;
+    }
+    .service-card {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 4px;
+      padding: 1.5rem 1.75rem;
+      display: flex; align-items: center; gap: 1.5rem;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .service-card:hover {
+      background: rgba(255,255,255,0.08);
+      border-color: rgba(201,168,76,0.4);
+    }
+    .service-card-icon {
+      width: 48px; height: 48px; flex-shrink: 0;
+      background: var(--burgundy);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+    }
+    .service-card-text .sc-title {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 0.15rem;
+    }
+    .service-card-text .sc-time {
+      font-size: 0.85rem;
+      color: var(--gold);
+      font-weight: 500;
+    }
+    .service-card-text .sc-note {
+      font-size: 0.78rem;
+      color: rgba(255,255,255,0.5);
+      margin-top: 0.1rem;
+    }
+    .worship-img {
+      aspect-ratio: 3/4;
+      border-radius: 4px;
+      overflow: hidden;
+      position: relative;
+    }
+    .worship-img::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(30,45,61,0.6) 0%, transparent 50%);
+      z-index: 1;
+    }
+
+    /* ── PHOTO GALLERY TILES ────────────────────────────────── */
+    #connect { background: var(--cream); }
+    .tiles-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: auto auto;
+      gap: 1.25rem;
+    }
+    .tile {
+      position: relative;
+      border-radius: 4px;
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      cursor: pointer;
+    }
+    .tile:first-child {
+      grid-column: 1 / 2;
+      grid-row: 1 / 3;
+      aspect-ratio: unset;
+    }
+    .tile-overlay {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(30,45,61,0.85) 0%, rgba(30,45,61,0.1) 60%);
+      display: flex; align-items: flex-end;
+      padding: 1.25rem;
+      z-index: 2;
+      transition: background 0.3s;
+    }
+    .tile:hover .tile-overlay {
+      background: linear-gradient(to top, rgba(139,26,43,0.85) 0%, rgba(139,26,43,0.1) 60%);
+    }
+    .tile-label {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: var(--white);
+    }
+
+    /* ── EVENTS ─────────────────────────────────────────────── */
+    #events { background: var(--white); }
+    .events-intro {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+      margin-bottom: 3rem;
+    }
+    .events-list {
+      display: flex; flex-direction: column; gap: 0; margin-top: 0;
+    }
+    .event-item {
+      display: grid;
+      grid-template-columns: 64px 1fr;
+      gap: 1.25rem;
+      align-items: start;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--cream-dk);
+    }
+    .event-item:first-child { border-top: 1px solid var(--cream-dk); }
+    .event-date {
+      background: var(--navy);
+      border-radius: 4px;
+      text-align: center;
+      padding: 0.5rem 0;
+      flex-shrink: 0;
+    }
+    .event-date .month {
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+    .event-date .day {
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      font-weight: 300;
+      color: var(--white);
+      line-height: 1;
+    }
+    .event-info .ev-title {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 0.2rem;
+    }
+    .event-info .ev-time {
+      font-size: 0.78rem;
+      color: var(--burgundy);
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      margin-bottom: 0.3rem;
+    }
+    .event-info .ev-desc {
+      font-size: 0.88rem;
+      color: var(--text-lt);
+      line-height: 1.5;
+    }
+
+    /* ── YOUTH & CHILDREN ──────────────────────────────────── */
+    #youth { background: var(--cream); }
+    .youth-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+    }
+    .youth-card {
+      background: var(--white);
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 4px 24px rgba(30,45,61,0.08);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .youth-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 40px rgba(30,45,61,0.14);
+    }
+    .youth-card-img {
+      aspect-ratio: 16/9;
+      overflow: hidden;
+    }
+    .youth-card-body {
+      padding: 1.75rem;
+    }
+    .youth-card-body .yc-tag {
+      font-size: 0.62rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--burgundy);
+      margin-bottom: 0.5rem;
+    }
+    .youth-card-body .yc-title {
+      font-family: var(--serif);
+      font-size: 1.4rem;
+      font-weight: 500;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+    .youth-card-body .yc-desc {
+      font-size: 0.88rem;
+      color: var(--text-lt);
+      line-height: 1.65;
+    }
+
+    /* ── NEW HERE BANNER ────────────────────────────────────── */
+    #new-here {
+      background: var(--burgundy);
+      padding: 5rem 2rem;
+    }
+    .new-here-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 3rem;
+      align-items: center;
+    }
+    #new-here .section-label { color: rgba(255,255,255,0.6); }
+    #new-here .section-title { color: var(--white); margin-bottom: 0.75rem; }
+    #new-here .section-body { color: rgba(255,255,255,0.75); max-width: 480px; }
+    .new-here-btns {
+      display: flex; flex-direction: column; gap: 0.75rem;
+      flex-shrink: 0;
+    }
+    .btn-white {
+      background: var(--white);
+      color: var(--burgundy);
+      padding: 0.85rem 2rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      border: 2px solid var(--white);
+      text-align: center;
+      transition: background 0.2s;
+    }
+    .btn-white:hover { background: var(--cream); }
+    .btn-ghost-white {
+      background: transparent;
+      color: var(--white);
+      padding: 0.85rem 2rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      border: 2px solid rgba(255,255,255,0.5);
+      text-align: center;
+      transition: border-color 0.2s;
+    }
+    .btn-ghost-white:hover { border-color: var(--white); }
+
+    /* ── PRAYER REQUEST ─────────────────────────────────────── */
+    #prayer { background: var(--navy); padding: 5rem 2rem; }
+    .prayer-inner {
+      max-width: 600px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    #prayer .section-label { color: var(--gold); }
+    #prayer .section-title { color: var(--white); margin-bottom: 1rem; }
+    #prayer .section-body { color: rgba(255,255,255,0.65); margin: 0 auto 2rem; max-width: 440px; }
+    .prayer-form {
+      display: flex; flex-direction: column; gap: 1rem;
+      text-align: left;
+    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .form-field {
+      display: flex; flex-direction: column; gap: 0.4rem;
+    }
+    .form-field label {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.5);
+    }
+    .form-field input,
+    .form-field textarea {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 2px;
+      padding: 0.75rem 1rem;
+      font-size: 0.9rem;
+      font-family: var(--sans);
+      color: var(--white);
+      outline: none;
+      transition: border-color 0.2s;
+      resize: vertical;
+    }
+    .form-field input::placeholder,
+    .form-field textarea::placeholder { color: rgba(255,255,255,0.25); }
+    .form-field input:focus,
+    .form-field textarea:focus { border-color: var(--gold); }
+    .form-submit {
+      background: var(--burgundy);
+      color: var(--white);
+      border: none;
+      padding: 0.9rem 2rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: 2px;
+      cursor: pointer;
+      font-family: var(--sans);
+      transition: background 0.2s;
+    }
+    .form-submit:hover { background: var(--burgundy-lt); }
+
+    /* ── LOCATION ───────────────────────────────────────────── */
+    #location { background: var(--cream); padding: 6rem 2rem; }
+    .location-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .location-details {
+      display: flex; flex-direction: column; gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .location-item {
+      display: flex; gap: 1rem; align-items: flex-start;
+    }
+    .location-item-icon {
+      width: 40px; height: 40px; flex-shrink: 0;
+      background: var(--navy);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+      color: var(--gold);
+    }
+    .location-item-text .li-label {
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--burgundy);
+      margin-bottom: 0.2rem;
+    }
+    .location-item-text .li-value {
+      font-family: var(--serif);
+      font-size: 1rem;
+      color: var(--navy);
+      line-height: 1.5;
+    }
+    .map-container {
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(30,45,61,0.12);
+      aspect-ratio: 4/3;
+    }
+    .map-container iframe {
+      width: 100%; height: 100%;
+      border: none;
+    }
+
+    /* ── FOOTER ─────────────────────────────────────────────── */
+    footer {
+      background: var(--navy-lt);
+      border-top: 1px solid rgba(201,168,76,0.2);
+      padding: 4rem 2rem 2rem;
+      color: rgba(255,255,255,0.6);
+    }
+    .footer-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 3rem;
+    }
+    .footer-brand .fb-logo {
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 0.25rem;
+    }
+    .footer-brand .fb-denom {
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 1rem;
+    }
+    .footer-brand p {
+      font-size: 0.85rem;
+      line-height: 1.65;
+    }
+    .footer-col h4 {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 1rem;
+    }
+    .footer-col ul {
+      list-style: none;
+      display: flex; flex-direction: column; gap: 0.5rem;
+    }
+    .footer-col ul li a {
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.55);
+      transition: color 0.2s;
+    }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-social {
+      display: flex; gap: 0.75rem; margin-top: 1.25rem;
+    }
+    .social-btn {
+      width: 36px; height: 36px;
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem;
+      color: rgba(255,255,255,0.6);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .social-btn:hover { border-color: var(--gold); color: var(--gold); }
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.75rem;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+    }
+    .footer-bottom a { color: var(--gold); }
+
+    /* ── CONTACT FORM ──────────────────────────────────────── */
+    .type-chip {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.45rem 0.9rem;
+      border: 1.5px solid #ccc;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+      background: var(--white);
+      color: var(--text);
+    }
+    .type-chip:has(input:checked) {
+      border-color: var(--burgundy);
+      background: var(--burgundy);
+      color: white;
+    }
+    .type-chip input[type="radio"] { display: none; }
+
+    /* ── MOBILE ─────────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      nav { padding: 0 1.5rem; }
+      .nav-links { display: none; flex-direction: column; gap: 0; }
+      .nav-links.open {
+        display: flex;
+        position: fixed; top: 72px; left: 0; right: 0;
+        background: var(--navy);
+        padding: 1rem 1.5rem 1.5rem;
+        border-top: 1px solid rgba(201,168,76,0.2);
+        z-index: 99;
+      }
+      .nav-links.open li { border-bottom: 1px solid rgba(255,255,255,0.07); }
+      .nav-links.open a { display: block; padding: 0.9rem 0; }
+      .hamburger { display: flex; }
+      .nav-cta { display: none; }
+
+      .about-grid,
+      .worship-grid,
+      .events-intro,
+      .location-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .about-img-wrap { aspect-ratio: 4/3; }
+      .tiles-grid { grid-template-columns: 1fr 1fr; }
+      .tile:first-child { grid-column: 1 / -1; grid-row: auto; }
+      .youth-grid { grid-template-columns: 1fr; }
+      .new-here-inner { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 600px) {
+      nav { padding: 0 1rem; }
+      section { padding: 4rem 1.25rem; }
+      .tiles-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .hero-info { flex-direction: column; gap: 0.75rem; }
+      .hero-divider { display: none; }
+
+      /* ── LARGER TEXT FOR MOBILE READABILITY ── */
+      body { font-size: 1.05rem; }
+      .section-body { font-size: 1.1rem; line-height: 1.8; }
+      .beliefs-list li { font-size: 1.05rem; }
+      .service-card-text .sc-title { font-size: 1.25rem; }
+      .service-card-text .sc-time { font-size: 1rem; }
+      .service-card-text .sc-note { font-size: 0.9rem; }
+      .event-info .ev-title { font-size: 1.25rem; }
+      .event-info .ev-time { font-size: 0.92rem; }
+      .event-info .ev-desc { font-size: 1rem; }
+      .youth-card-body .yc-desc { font-size: 1rem; line-height: 1.75; }
+      .youth-card-body .yc-title { font-size: 1.5rem; }
+      .form-field label { font-size: 0.85rem; }
+      .form-field input, .form-field textarea { font-size: 1rem; padding: 0.9rem 1rem; }
+      .location-item-text .li-value { font-size: 1.1rem; }
+      .footer-brand p { font-size: 1rem; }
+      .footer-col ul li a { font-size: 1rem; }
+      .btn-primary, .btn-outline, .btn-white, .btn-ghost-white { font-size: 0.9rem; padding: 1rem 2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ───────────────────────────────────────────────── -->
+  <nav id="nav">
+    <a href="#" class="nav-logo">
+      <div class="logo-mark">
+        <img src="images/DOC-Chalice-Solid-Red.svg" alt="Disciples of Christ Chalice" style="width:36px; height:auto;" />
+      </div>
+      <div class="logo-text">
+        First Christian Church
+        <small>Disciples of Christ · Harrison, AR</small>
+      </div>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#about">About Us</a></li>
+      <li><a href="#worship">Worship</a></li>
+      <li><a href="#connect">Connect</a></li>
+      <li><a href="#events">Events</a></li>
+      <li><a href="#youth">Youth &amp; Kids</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#location">Find Us</a></li>
+      <li><a href="#contact" class="nav-cta">Prayer Request</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ── HERO ──────────────────────────────────────────────── -->
+  <section class="hero" id="home">
+    <div class="hero-bg">
+
+    </div>
+    <div class="hero-content">
+      <span class="hero-eyebrow">Harrison, Arkansas</span>
+      <h1>First <em>Christian</em><br>Church</h1>
+      <p class="hero-sub">Disciples of Christ — All Are Welcome at the Lord's Table</p>
+      <div class="hero-info">
+        <div class="hero-info-item">
+          <div class="label">Traditional Worship</div>
+          <div class="value">9:00 AM</div>
+        </div>
+        <div class="hero-divider"></div>
+        <div class="hero-info-item">
+          <div class="label">Sunday School</div>
+          <div class="value">10:00 AM</div>
+        </div>
+        <div class="hero-divider"></div>
+        <div class="hero-info-item">
+          <div class="label">Contemporary Worship</div>
+          <div class="value">11:00 AM</div>
+        </div>
+        <div class="hero-divider"></div>
+        <div class="hero-info-item">
+          <div class="label">Phone</div>
+          <div class="value">(870) 741-5757</div>
+        </div>
+      </div>
+      <div class="hero-btns">
+        <a href="#new-here" class="btn-primary">I'm New Here</a>
+        <a href="#worship" class="btn-outline">Worship With Us</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ── 150TH ANNIVERSARY BANNER ─────────────────────────── -->
+  <section id="anniversary" style="background: linear-gradient(135deg, #1e2d3d 0%, #2a3f52 100%); padding: 4rem 2rem; border-bottom: 3px solid var(--gold);">
+    <div class="container">
+      <div style="display:flex; align-items:center; justify-content:center; gap:3rem; flex-wrap:wrap;">
+        <img src="images/fcc150_logo.png" alt="First Christian Church 150th Anniversary" style="width:200px; height:200px; object-fit:contain; flex-shrink:0;" />
+        <div style="text-align:left; max-width:480px;">
+          <div style="font-size:0.7rem; font-weight:600; letter-spacing:0.22em; text-transform:uppercase; color:var(--gold); margin-bottom:0.75rem;">A Special Milestone</div>
+          <h2 style="font-family:var(--serif); font-size:clamp(2rem,4vw,3rem); font-weight:300; color:var(--white); line-height:1.15; margin-bottom:1rem;">Celebrating <em style="font-style:italic; color:var(--gold);">150 Years</em><br>of Faith in Harrison</h2>
+          <p style="font-size:1rem; line-height:1.75; color:rgba(255,255,255,0.7); margin-bottom:1.5rem;">Since 1876, First Christian Church has been a home for seekers and believers in the heart of Harrison, Arkansas. Join us as we celebrate this milestone year with special events, reflections, and gratitude.</p>
+          <div style="display:flex; gap:1rem; flex-wrap:wrap;">
+            <a href="#events" style="background:var(--burgundy); color:var(--white); padding:0.75rem 1.75rem; font-size:0.78rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; border-radius:2px; border:2px solid var(--burgundy);">Anniversary Events</a>
+            <a href="#contact" style="background:transparent; color:var(--white); padding:0.75rem 1.75rem; font-size:0.78rem; font-weight:600; letter-spacing:0.12em; text-transform:uppercase; border-radius:2px; border:2px solid rgba(255,255,255,0.4);">Get Involved</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WELCOME STRIP ─────────────────────────────────────── -->
+  <div class="welcome-strip">
+    <p>"We believe in <strong>radical welcome</strong> — every person, every background, every question. You belong here."</p>
+  </div>
+
+  <!-- ── ABOUT ─────────────────────────────────────────────── -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-img-wrap">
+          <!--
+            📸 PHOTO PLACEHOLDER
+            Replace this entire div with:
+            <img src="images/sanctuary.jpg" alt="FCC Sanctuary" />
+            Suggested: interior sanctuary, communion table, or congregation gathering
+          -->
+          <img src="images/aerial.jpg" alt="Aerial view of First Christian Church campus in Harrison, Arkansas" style="width:100%; height:100%; object-fit:cover; border-radius:4px; display:block;" />
+        </div>
+        <div class="about-content">
+          <div class="section-label">About Us</div>
+          <div class="gold-rule"></div>
+          <h2 class="section-title">A Community<br>Rooted in <em>Grace</em></h2>
+          <p class="section-body">First Christian Church (Disciples of Christ) has been a home for seekers, believers, and servants in Harrison, Arkansas for generations. We are a non-creedal, open-communion congregation where every person is welcome at the Lord's table — no exceptions.</p>
+          <p class="section-body" style="margin-top:1rem;">We believe in the freedom to follow Jesus together, shaped by scripture, guided by the Spirit, and committed to one another and our community.</p>
+          <ul class="beliefs-list" style="margin-top:1.5rem;">
+            <li>Open communion — all are welcome at the Lord's Table</li>
+            <li>No creed but Christ, no book but the Bible</li>
+            <li>Baptism by immersion, though we accept all who follow Jesus</li>
+            <li>Committed to Christian unity and our neighbors in need</li>
+            <li>Part of the wider Disciples of Christ denomination</li>
+          </ul>
+          <a href="https://disciples.org" target="_blank" rel="noopener" style="display:inline-block; margin-top:1.75rem; font-size:0.78rem; font-weight:600; letter-spacing:0.1em; text-transform:uppercase; color:var(--burgundy); border-bottom:2px solid var(--burgundy); padding-bottom:2px;">Learn About Disciples of Christ →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── WORSHIP ───────────────────────────────────────────── -->
+  <section id="worship">
+    <div class="container">
+      <div class="worship-grid">
+        <div>
+          <div class="section-label">Worship</div>
+          <div class="gold-rule"></div>
+          <h2 class="section-title" style="color:var(--white);">Join Us<br>This <em>Sunday</em></h2>
+          <p class="section-body">Our worship blends the best of traditional and contemporary expression — scripture, song, prayer, and the Lord's Supper shared together every week. Come as you are.</p>
+          <div class="service-cards">
+            <div class="service-card">
+              <div class="service-card-icon">🕯️</div>
+              <div class="service-card-text">
+                <div class="sc-title">Traditional Worship</div>
+                <div class="sc-time">Sundays at 9:00 AM</div>
+                <div class="sc-note">Classic hymns &amp; liturgy · Open communion every Sunday</div>
+              </div>
+            </div>
+            <div class="service-card">
+              <div class="service-card-icon">📖</div>
+              <div class="service-card-text">
+                <div class="sc-title">Sunday School</div>
+                <div class="sc-time">Sundays at 10:00 AM</div>
+                <div class="sc-note">Classes for children, youth &amp; adults</div>
+              </div>
+            </div>
+            <div class="service-card">
+              <div class="service-card-icon">🎸</div>
+              <div class="service-card-text">
+                <div class="sc-title">Contemporary Worship</div>
+                <div class="sc-time">Sundays at 11:00 AM</div>
+                <div class="sc-note">Praise music &amp; modern expression · Open communion</div>
+              </div>
+            </div>
+            <div class="service-card">
+              <div class="service-card-icon">🍽️</div>
+              <div class="service-card-text">
+                <div class="sc-title">Wednesday Fellowship Meal</div>
+                <div class="sc-time">Wednesdays at 5:15 PM</div>
+                <div class="sc-note">Fellowship Meal 5:15 PM · Classes &amp; Choir 6:00 PM</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="worship-img">
+          <!--
+            📸 PHOTO PLACEHOLDER
+            Replace with:
+            <img src="images/worship.jpg" alt="Worship service at FCC" />
+            Suggested: congregation in worship, choir, or preaching
+          -->
+          <img src="images/sanctuary.jpg" alt="First Christian Church sanctuary — altar with Last Supper relief, cross, and stained glass chalice window" style="width:100%; height:100%; object-fit:cover; border-radius:4px; display:block;" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONNECT TILES ─────────────────────────────────────── -->
+  <section id="connect">
+    <div class="container">
+      <div style="text-align:center; margin-bottom:3rem;">
+        <div class="section-label" style="text-align:center;">Explore FCC</div>
+        <div class="gold-rule" style="margin:0.75rem auto 0;"></div>
+        <h2 class="section-title" style="text-align:center; max-width:480px; margin:0.75rem auto 0;">Everything <em>FCC</em> Has to Offer</h2>
+      </div>
+      <div class="tiles-grid">
+        <!-- Each tile: replace photo-placeholder div with <img src="..." alt="..." /> -->
+        <div class="tile">
+          <img src="images/fellowship.jpg" alt="Congregation gathered for Wednesday night fellowship at First Christian Church" style="width:100%; height:100%; object-fit:cover; object-position:center 25%; display:block;" />
+          <div class="tile-overlay"><span class="tile-label">Our Community</span></div>
+        </div>
+        <div class="tile">
+          <img src="images/worshipband.jpg" alt="Contemporary worship band leading service at First Christian Church" style="width:100%; height:100%; object-fit:cover; object-position:center 30%; display:block;" />
+          <div class="tile-overlay"><span class="tile-label">Contemporary Worship</span></div>
+        </div>
+        <div class="tile">
+          <img src="images/traditional.jpg" alt="Choir singing during traditional worship service at First Christian Church" style="width:100%; height:100%; object-fit:cover; object-position:center 25%; display:block;" />
+          <div class="tile-overlay"><span class="tile-label">Traditional Worship</span></div>
+        </div>
+        <div class="tile">
+          <img src="images/events.jpg" alt="Families and congregation enjoying a community event at The Crossing" style="width:100%; height:100%; object-fit:cover; object-position:center 20%; display:block;" />
+          <div class="tile-overlay"><span class="tile-label">Events</span></div>
+        </div>
+
+        <div class="tile">
+          <div style="width:100%; height:100%; min-height:220px; background:var(--navy); display:flex; align-items:center; justify-content:center; padding:1.5rem;">
+            <div style="text-align:center; line-height:1.2;">
+              <div style="font-family:var(--serif); font-size:0.7rem; font-weight:600; letter-spacing:0.25em; text-transform:uppercase; color:var(--gold); margin-bottom:0.75rem;">Sunday School · 10:00 AM</div>
+              <div style="font-family:var(--serif); font-size:1.6rem; font-weight:600; color:var(--gold); margin-bottom:0.3rem;">Open Door</div>
+              <div style="font-family:var(--serif); font-size:1.6rem; font-weight:600; color:var(--gold); margin-bottom:0.3rem;">Hearthstone</div>
+              <div style="font-family:var(--serif); font-size:1.6rem; font-weight:600; color:var(--gold); margin-bottom:0.5rem;">Fountain of Life</div>
+              <div style="width:40px; height:2px; background:var(--burgundy); margin:0.5rem auto;"></div>
+              <div style="font-family:var(--sans); font-size:0.85rem; font-weight:500; letter-spacing:0.08em; color:rgba(255,255,255,0.7); margin-bottom:0.2rem;">Children · Youth</div>
+              <div style="font-family:var(--serif); font-size:0.75rem; font-style:italic; color:rgba(255,255,255,0.45); margin-top:0.5rem;">A class for everyone</div>
+            </div>
+          </div>
+          <div class="tile-overlay"><span class="tile-label">Sunday School</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EVENTS ─────────────────────────────────────────────── -->
+  <section id="events">
+    <div class="container">
+      <div class="events-intro">
+        <div>
+          <div class="section-label">Calendar</div>
+          <div class="gold-rule"></div>
+          <h2 class="section-title">Upcoming<br><em>Events</em></h2>
+          <p class="section-body">From worship gatherings to community outreach, there's always something happening at FCC. All are welcome to join us.</p>
+
+        </div>
+        <div class="events-list">
+          <div class="event-item">
+            <div class="event-date">
+              <div class="month">Apr</div>
+              <div class="day">2</div>
+            </div>
+            <div class="event-info">
+              <div class="ev-title">Maundy Thursday — Living Last Supper</div>
+              <div class="ev-time">6:00 PM · Contemporary Sanctuary</div>
+              <div class="ev-desc">Hear each disciple recount his experience of following Jesus. At the table, Jesus says that one will betray him. Now each disciple must ask, "Am I the one?"</div>
+            </div>
+          </div>
+          <div class="event-item">
+            <div class="event-date">
+              <div class="month">Apr</div>
+              <div class="day">3</div>
+            </div>
+            <div class="event-info">
+              <div class="ev-title">Good Friday Luncheon</div>
+              <div class="ev-time">Noon · Fellowship Hall</div>
+              <div class="ev-desc">All are invited! Menu includes quiche, salad, muffins, and dessert. Childcare available by request. RSVP by March 29 — call 870-741-5757.</div>
+            </div>
+          </div>
+          <div class="event-item">
+            <div class="event-date">
+              <div class="month">Apr</div>
+              <div class="day">5</div>
+            </div>
+            <div class="event-info">
+              <div class="ev-title">🌅 Easter Sunday</div>
+              <div class="ev-time">9:00 AM &amp; 11:00 AM</div>
+              <div class="ev-desc">He is risen! Join us for our joyful Easter worship celebration. All are welcome.</div>
+            </div>
+          </div>
+          <div class="event-item">
+            <div class="event-date">
+              <div class="month">Apr</div>
+              <div class="day">7</div>
+            </div>
+            <div class="event-info">
+              <div class="ev-title">Lunch Bunch</div>
+              <div class="ev-time">11:30 AM · Fellowship Hall</div>
+              <div class="ev-desc">Fun, food, and fellowship! Catered by Ranch House Restaurant. Menu: Ham, Au Gratin Potatoes, Green Beans, Corn &amp; Dinner Rolls. Desserts by the women of the church. Bingo after the meal!</div>
+            </div>
+          </div>
+          <div class="event-item">
+            <div class="event-date">
+              <div class="month">Apr</div>
+              <div class="day">14</div>
+            </div>
+            <div class="event-info">
+              <div class="ev-title">Lunch Bunch</div>
+              <div class="ev-time">11:30 AM · Fellowship Hall</div>
+              <div class="ev-desc">Fun, food, and fellowship! Open to all members of First Christian and First Presbyterian Churches. RSVP to Tana Jackson at 479-872-2205.</div>
+            </div>
+          </div>
+          <div class="event-item">
+            <div class="event-date">
+              <div class="month">Apr</div>
+              <div class="day">20</div>
+            </div>
+            <div class="event-info">
+              <div class="ev-title">🩸 Blood Drive</div>
+              <div class="ev-time">Noon – 6:00 PM · Fellowship Hall</div>
+              <div class="ev-desc">Harrison Community Blood Drive hosted by First Christian Church. Schedule an appointment at cbco.org/donate-blood or call 417-227-5006.</div>
+            </div>
+          </div>
+          <div class="event-item">
+            <div class="event-date">
+              <div class="month">May</div>
+              <div class="day">18</div>
+            </div>
+            <div class="event-info">
+              <div class="ev-title">🎉 150th Anniversary Kickoff!</div>
+              <div class="ev-time">5:45 PM · Original FCC Site, 500 South Pine Street</div>
+              <div class="ev-desc">We gather at the original site of FCC-Harrison for a service at 5:45 PM followed by drop-in communion 6:00–7:00 PM. Join us for this historic milestone!</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── YOUTH & CHILDREN ──────────────────────────────────── -->
+  <section id="youth">
+    <div class="container">
+      <div style="margin-bottom:3rem;">
+        <div class="section-label">Ministries</div>
+        <div class="gold-rule"></div>
+        <h2 class="section-title">Youth &amp; <em>Children's</em> Ministry</h2>
+        <p class="section-body">We believe children and youth are the church NOW — not just its future. Every Sunday we create space for the next generation to grow in faith, friendship, and the love of God.</p>
+      </div>
+      <div class="youth-grid">
+        <div class="youth-card">
+          <div class="youth-card-img">
+            <!--
+              📸 Replace with:
+              <img src="images/children.jpg" alt="Children's Sunday School at FCC" />
+            -->
+            <img src="images/children.jpg" alt="Child proudly showing Sunday School artwork at First Christian Church" style="width:100%; height:100%; object-fit:cover; object-position:center 15%; display:block;" />
+          </div>
+          <div class="youth-card-body">
+            <div class="yc-tag">K – 5th Grade</div>
+            <div class="yc-title">Children's Sunday School</div>
+            <div class="yc-desc">Our children's class meets every Sunday at 10:00 AM. Using age-appropriate Bible stories and activities, we help children discover their faith in a fun, welcoming environment. All-in-One Bible Fun curriculum.</div>
+          </div>
+        </div>
+        <div class="youth-card">
+          <div class="youth-card-img">
+            <!--
+              📸 Replace with:
+              <img src="images/youth.jpg" alt="Youth Ministry at FCC" />
+            -->
+            <img src="images/crossing.jpg" alt="Youth and congregation enjoying ice cream social at The Crossing" style="width:100%; height:100%; object-fit:cover; object-position:center 20%; display:block;" />
+          </div>
+          <div class="youth-card-body">
+            <div class="yc-tag">6th – 12th Grade</div>
+            <div class="yc-title">Youth Ministry</div>
+            <div class="yc-desc">Our youth meet every Sunday at 10:00 AM for meaningful discussion, community, and fun. We create space for middle and high schoolers to ask real questions and grow in faith together.</div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:2rem; padding:1.75rem; background:var(--white); border-radius:4px; border-left:4px solid var(--gold);">
+        <p style="font-family:var(--serif); font-size:1.05rem; color:var(--navy);">📞 Questions about our youth or children's program? Contact Kevin Kaeser (Children &amp; Youth Director) at <a href="mailto:fccdocharrison@gmail.com" style="color:var(--burgundy);">fccdocharrison@gmail.com</a> or call <a href="tel:+18707415757" style="color:var(--burgundy);">(870) 741-5757</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── NEW HERE ───────────────────────────────────────────── -->
+  <section id="new-here">
+    <div class="new-here-inner">
+      <div>
+        <div class="section-label">Visiting?</div>
+        <h2 class="section-title">Planning Your<br>First <em style="font-style:italic;">Visit</em></h2>
+        <p class="section-body">We know visiting a new church can feel daunting. We want to make your first Sunday at FCC as comfortable and welcoming as possible. Here's everything you need to know before you arrive.</p>
+      </div>
+      <div class="new-here-btns">
+        <a href="#location" class="btn-white">Get Directions</a>
+        <a href="#contact" class="btn-ghost-white">Contact Us</a>
+        <a href="https://disciples.org/our-identity/" target="_blank" rel="noopener" class="btn-ghost-white">About Disciples of Christ</a>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ── LOCATION ───────────────────────────────────────────── -->
+  <section id="location">
+    <div class="container">
+      <div class="location-grid">
+        <div>
+          <div class="section-label">Find Us</div>
+          <div class="gold-rule"></div>
+          <h2 class="section-title">Location &amp;<br><em>Directions</em></h2>
+          <div class="location-details">
+            <div class="location-item">
+              <div class="location-item-icon">📍</div>
+              <div class="location-item-text">
+                <div class="li-label">Address</div>
+                <div class="li-value">915 South Maple Street<br>Harrison, AR 72601</div>
+              </div>
+            </div>
+            <div class="location-item">
+              <div class="location-item-icon">📞</div>
+              <div class="location-item-text">
+                <div class="li-label">Phone</div>
+                <div class="li-value"><a href="tel:+18707415757" style="color:var(--navy);">(870) 741-5757</a></div>
+              </div>
+            </div>
+            <div class="location-item">
+              <div class="location-item-icon">✉️</div>
+              <div class="location-item-text">
+                <div class="li-label">Email</div>
+                <div class="li-value"><a href="mailto:fccdocharrison@gmail.com" style="color:var(--navy);">fccdocharrison@gmail.com</a></div>
+              </div>
+            </div>
+            <div class="location-item">
+              <div class="location-item-icon">🕐</div>
+              <div class="location-item-text">
+                <div class="li-label">Office Hours</div>
+                <div class="li-value">
+                  Tuesday – Thursday: 9:00 AM – 2:00 PM<br>
+                  Friday: 9:00 AM – Noon
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="map-container">
+          <!-- Update the src with your exact Google Maps embed for your address -->
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3231.5!2d-93.1107!3d36.2282!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87cf5b5b5b5b5b5b%3A0x0!2s915+S+Maple+St%2C+Harrison%2C+AR+72601!5e0!3m2!1sen!2sus!4v1708000000000"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="First Christian Church 915 South Maple Street Harrison AR">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT / PRAYER FORM ───────────────────────────── -->
+  <section id="contact" style="background: var(--white); padding: 5rem 0;">
+    <div class="container">
+      <div style="text-align:center; margin-bottom:2.5rem;">
+        <div class="section-label">We'd Love to Hear From You</div>
+        <div class="gold-rule" style="margin:0.75rem auto 1.25rem;"></div>
+        <h2 class="section-title">Contact Us or <em>Request Prayer</em></h2>
+        <p style="color:var(--text-lt); max-width:520px; margin:0 auto;">Whether you have a question, want to visit, or need prayer — we're here for you. All messages go directly to our ministry team.</p>
+      </div>
+
+      <div style="max-width:680px; margin:0 auto; background:var(--cream); border-radius:12px; padding:2.5rem; box-shadow:0 4px 30px rgba(0,0,0,0.07);">
+
+        <!-- Success message (hidden by default) -->
+        <div id="form-success" style="display:none; text-align:center; padding:2rem;">
+          <div style="font-size:2.5rem; margin-bottom:1rem;">🙏</div>
+          <h3 style="font-family:var(--serif); font-size:1.6rem; color:var(--navy); margin-bottom:0.5rem;">Thank You!</h3>
+          <p style="color:var(--text-lt);">Your message has been received. We'll be in touch soon, and we're already praying for you.</p>
+        </div>
+
+        <form id="contact-form"
+          action="https://formspree.io/f/mjgezkpb"
+          method="POST"
+          data-netlify="true"
+          name="contact"
+          netlify-honeypot="bot-field">
+
+          <!-- Honeypot spam protection -->
+          <p style="display:none;"><label>Don't fill this out: <input name="bot-field" /></label></p>
+          <input type="hidden" name="form-name" value="contact" />
+
+          <!-- Request Type -->
+          <div style="margin-bottom:1.5rem;">
+            <label style="display:block; font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; font-weight:600; color:var(--navy); margin-bottom:0.6rem;">I am reaching out about *</label>
+            <div style="display:flex; flex-wrap:wrap; gap:0.5rem;" id="request-type-group">
+              <label class="type-chip"><input type="radio" name="request_type" value="General Contact" required> General Contact</label>
+              <label class="type-chip"><input type="radio" name="request_type" value="Prayer Request"> Prayer Request</label>
+              <label class="type-chip"><input type="radio" name="request_type" value="Visit Request / I'm New"> Visit Request / I'm New</label>
+              <label class="type-chip"><input type="radio" name="request_type" value="Ministry Information"> Ministry Information</label>
+            </div>
+          </div>
+
+          <!-- Name row -->
+          <div class="form-row" style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1rem;">
+            <div>
+              <label style="display:block; font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; font-weight:600; color:var(--navy); margin-bottom:0.4rem;">First Name *</label>
+              <input type="text" name="first_name" required placeholder="Jane"
+                style="width:100%; padding:0.75rem 1rem; border:1px solid #ddd; border-radius:6px; font-family:var(--sans); font-size:0.95rem; background:var(--white); outline:none; transition:border-color 0.2s;"
+                onfocus="this.style.borderColor='var(--burgundy)'" onblur="this.style.borderColor='#ddd'" />
+            </div>
+            <div>
+              <label style="display:block; font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; font-weight:600; color:var(--navy); margin-bottom:0.4rem;">Last Name *</label>
+              <input type="text" name="last_name" required placeholder="Smith"
+                style="width:100%; padding:0.75rem 1rem; border:1px solid #ddd; border-radius:6px; font-family:var(--sans); font-size:0.95rem; background:var(--white); outline:none; transition:border-color 0.2s;"
+                onfocus="this.style.borderColor='var(--burgundy)'" onblur="this.style.borderColor='#ddd'" />
+            </div>
+          </div>
+
+          <!-- Email & Phone -->
+          <div class="form-row" style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-bottom:1rem;">
+            <div>
+              <label style="display:block; font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; font-weight:600; color:var(--navy); margin-bottom:0.4rem;">Email *</label>
+              <input type="email" name="email" required placeholder="jane@example.com"
+                style="width:100%; padding:0.75rem 1rem; border:1px solid #ddd; border-radius:6px; font-family:var(--sans); font-size:0.95rem; background:var(--white); outline:none; transition:border-color 0.2s;"
+                onfocus="this.style.borderColor='var(--burgundy)'" onblur="this.style.borderColor='#ddd'" />
+            </div>
+            <div>
+              <label style="display:block; font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; font-weight:600; color:var(--navy); margin-bottom:0.4rem;">Phone <span style="font-weight:400; color:var(--text-lt);">(optional)</span></label>
+              <input type="tel" name="phone" placeholder="(870) 555-1234"
+                style="width:100%; padding:0.75rem 1rem; border:1px solid #ddd; border-radius:6px; font-family:var(--sans); font-size:0.95rem; background:var(--white); outline:none; transition:border-color 0.2s;"
+                onfocus="this.style.borderColor='var(--burgundy)'" onblur="this.style.borderColor='#ddd'" />
+            </div>
+          </div>
+
+          <!-- Message -->
+          <div style="margin-bottom:1.5rem;">
+            <label style="display:block; font-size:0.75rem; letter-spacing:0.1em; text-transform:uppercase; font-weight:600; color:var(--navy); margin-bottom:0.4rem;">Message *</label>
+            <textarea name="message" required rows="5" placeholder="How can we help or pray for you?"
+              style="width:100%; padding:0.75rem 1rem; border:1px solid #ddd; border-radius:6px; font-family:var(--sans); font-size:0.95rem; background:var(--white); outline:none; resize:vertical; transition:border-color 0.2s;"
+              onfocus="this.style.borderColor='var(--burgundy)'" onblur="this.style.borderColor='#ddd'"></textarea>
+          </div>
+
+          <!-- Prayer confidentiality (shown only for Prayer Request) -->
+          <div id="prayer-options" style="display:none; background:rgba(139,26,43,0.06); border-left:3px solid var(--burgundy); padding:1rem 1.25rem; border-radius:0 6px 6px 0; margin-bottom:1.5rem;">
+            <p style="font-size:0.85rem; color:var(--navy); font-weight:600; margin-bottom:0.5rem;">Prayer Request Options</p>
+            <label style="display:flex; align-items:center; gap:0.5rem; font-size:0.875rem; color:var(--text); cursor:pointer;">
+              <input type="checkbox" name="confidential" value="yes" style="accent-color:var(--burgundy);" />
+              Keep this prayer request confidential (shared only with our pastoral team)
+            </label>
+          </div>
+
+          <!-- Submit -->
+          <button type="submit"
+            style="width:100%; padding:1rem; background:var(--burgundy); color:white; border:none; border-radius:6px; font-family:var(--sans); font-size:0.9rem; font-weight:600; letter-spacing:0.08em; text-transform:uppercase; cursor:pointer; transition:background 0.2s;"
+            onmouseover="this.style.background='var(--burgundy-lt)'" onmouseout="this.style.background='var(--burgundy)'">
+            Send Message →
+          </button>
+          <p style="text-align:center; font-size:0.78rem; color:var(--text-lt); margin-top:0.75rem;">We typically respond within one business day.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SOCIAL FEED ──────────────────────────────────────── -->
+  <section id="facebook" style="background: var(--cream); padding: 5rem 0;">
+    <div class="container">
+      <div style="text-align:center; margin-bottom:2.5rem;">
+        <div class="section-label">Stay Connected</div>
+        <div class="gold-rule" style="margin:0.75rem auto 1.25rem;"></div>
+        <h2 class="section-title">Follow Us on <em>Social Media</em></h2>
+        <p style="color:var(--text-lt); max-width:500px; margin:0 auto;">Stay up to date with announcements, photos, and community news from FCC.</p>
+      </div>
+      <div style="display:flex; gap:2rem; justify-content:center; flex-wrap:wrap; max-width:800px; margin:0 auto;">
+
+        <!-- Facebook Card -->
+        <a href="https://www.facebook.com/fccharrison" target="_blank" rel="noopener"
+          style="flex:1; min-width:280px; max-width:360px; background:var(--white); border-radius:8px; padding:2rem; text-align:center; box-shadow:0 4px 20px rgba(0,0,0,0.08); transition:transform 0.2s; text-decoration:none; color:var(--text); display:block;">
+          <div style="width:56px; height:56px; background:#1877f2; border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1rem; font-size:1.6rem; color:white; font-weight:700; font-family:sans-serif;">f</div>
+          <div style="font-family:var(--serif); font-size:1.4rem; font-weight:600; color:var(--navy); margin-bottom:0.5rem;">Facebook</div>
+          <div style="color:var(--text-lt); font-size:0.875rem; margin-bottom:1.25rem;">@fccharrison</div>
+          <div style="background:var(--navy); color:white; padding:0.6rem 1.5rem; border-radius:4px; font-size:0.8rem; font-family:var(--sans); font-weight:500; letter-spacing:0.05em; text-transform:uppercase; display:inline-block;">Follow Us →</div>
+        </a>
+
+        <!-- Instagram Card -->
+        <a href="https://www.instagram.com/fccharrisonar/" target="_blank" rel="noopener"
+          style="flex:1; min-width:280px; max-width:360px; background:var(--white); border-radius:8px; padding:2rem; text-align:center; box-shadow:0 4px 20px rgba(0,0,0,0.08); transition:transform 0.2s; text-decoration:none; color:var(--text); display:block;">
+          <div style="width:56px; height:56px; background:linear-gradient(45deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888); border-radius:50%; display:flex; align-items:center; justify-content:center; margin:0 auto 1rem; font-size:1.4rem; color:white;">📷</div>
+          <div style="font-family:var(--serif); font-size:1.4rem; font-weight:600; color:var(--navy); margin-bottom:0.5rem;">Instagram</div>
+          <div style="color:var(--text-lt); font-size:0.875rem; margin-bottom:1.25rem;">@fccharrisonar</div>
+          <div style="background:var(--burgundy); color:white; padding:0.6rem 1.5rem; border-radius:4px; font-size:0.8rem; font-family:var(--sans); font-weight:500; letter-spacing:0.05em; text-transform:uppercase; display:inline-block;">Follow Us →</div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── FOOTER ─────────────────────────────────────────────── -->
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="fb-logo">First Christian Church</div>
+        <div class="fb-denom">Disciples of Christ · 915 S. Maple · Harrison, AR 72601</div>
+        <p>A community rooted in grace, open to all, and committed to following Jesus together. All are welcome at the Lord's Table.</p>
+        <p style="margin-top:0.75rem; font-size:0.8rem; line-height:1.6;">
+          <strong style="color:rgba(255,255,255,0.8);">Rev. Laura West</strong>, Senior Minister<br>
+          <a href="tel:+18707415757" style="color:rgba(255,255,255,0.55);">(870) 741-5757</a> &nbsp;·&nbsp;
+          <a href="mailto:fccdocharrison@gmail.com" style="color:rgba(255,255,255,0.55);">fccdocharrison@gmail.com</a>
+        </p>
+        <div class="footer-social">
+          <a href="https://www.facebook.com/fccharrison" target="_blank" rel="noopener" class="social-btn" aria-label="Facebook">f</a>
+          <a href="https://www.instagram.com/fccharrisonar/" target="_blank" rel="noopener" class="social-btn" aria-label="Instagram">in</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#about">About Us</a></li>
+          <li><a href="#worship">Worship</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a href="#youth">Youth &amp; Kids</a></li>
+          <li><a href="#location">Find Us</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>I'm New Here</h4>
+        <ul>
+          <li><a href="#location">Location &amp; Parking</a></li>
+          <li><a href="#worship">What to Expect</a></li>
+          <li><a href="#contact">Contact Us</a></li>
+          <li><a href="https://disciples.org" target="_blank">About Disciples of Christ</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="https://disciples.org/our-identity/" target="_blank" rel="noopener">Disciples of Christ</a></li>
+          <li><a href="#">Support Groups</a></li>
+          <li><a href="#">Right Now Media</a></li>
+          <li><a href="#">Share &amp; Care</a></li>
+          <li><a href="#contact">Prayer Request</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Office Hours</h4>
+        <ul>
+          <li>Tuesday – Thursday</li>
+          <li>9:00 AM – 2:00 PM</li>
+          <li style="margin-top:0.5rem;">Friday</li>
+          <li>9:00 AM – Noon</li>
+          <li style="margin-top:0.5rem;"><a href="tel:+18707415757">(870) 741-5757</a></li>
+          <li><a href="mailto:fccdocharrison@gmail.com">fccdocharrison@gmail.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 First Christian Church, Harrison, Arkansas. All rights reserved.</span>
+      <span>Built with ♥ for the congregation of FCC</span>
+    </div>
+  </footer>
+
+  <!-- ── SCRIPTS ────────────────────────────────────────────── -->
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    // Prayer request options toggle
+    document.querySelectorAll('input[name="request_type"]').forEach(radio => {
+      radio.addEventListener('change', () => {
+        const prayerOptions = document.getElementById('prayer-options');
+        prayerOptions.style.display = radio.value === 'Prayer Request' ? 'block' : 'none';
+      });
+    });
+
+    // Contact form AJAX submission (Formspree)
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const btn = contactForm.querySelector('button[type="submit"]');
+        btn.textContent = 'Sending…';
+        btn.disabled = true;
+        try {
+          const response = await fetch(contactForm.action, {
+            method: 'POST',
+            body: new FormData(contactForm),
+            headers: { 'Accept': 'application/json' }
+          });
+          if (response.ok) {
+            contactForm.style.display = 'none';
+            document.getElementById('form-success').style.display = 'block';
+          } else {
+            btn.textContent = 'Error — Please Try Again';
+            btn.disabled = false;
+          }
+        } catch {
+          btn.textContent = 'Error — Please Try Again';
+          btn.disabled = false;
+        }
+      });
+    }
+
+    // Mobile nav toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks  = document.getElementById('navLinks');
+    hamburger.addEventListener('click', () => {
+      navLinks.classList.toggle('open');
+    });
+    // Close nav on link click
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+
+    // Scroll-triggered fade-in animation
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersec
