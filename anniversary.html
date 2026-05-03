@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>150th Anniversary | First Christian Church | Harrison, Arkansas</title>
+  <meta name="description" content="First Christian Church (Disciples of Christ) Harrison, AR celebrates 150 years of Loving God and Loving Others. Join us for our Sesquicentennial celebration events throughout 2026." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --navy:    #1e2d3d;
+      --navy-lt: #253548;
+      --cream:   #f5f0e8;
+      --cream-dk:#ede6d6;
+      --burgundy:#8b1a2b;
+      --burgundy-lt:#a82035;
+      --gold:    #c9a84c;
+      --text:    #2c2c2c;
+      --text-lt: #5a5a5a;
+      --white:   #ffffff;
+      --serif:   'Cormorant Garamond', Georgia, serif;
+      --sans:    'Jost', sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--sans); background: var(--white); color: var(--text); overflow-x: hidden; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 3rem; height: 72px;
+      background: rgba(30,45,61,0.97);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid rgba(201,168,76,0.2);
+    }
+    .nav-logo { display: flex; align-items: center; gap: 0.75rem; }
+    .nav-logo .logo-mark { width: 44px; height: 44px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+    .nav-logo .logo-text { font-family: var(--serif); font-size: 1.05rem; font-weight: 500; color: var(--white); line-height: 1.25; letter-spacing: 0.01em; }
+    .nav-logo .logo-text small { display: block; font-size: 0.65rem; font-family: var(--sans); font-weight: 300; color: var(--gold); letter-spacing: 0.12em; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.8); transition: color 0.2s; }
+    .nav-links a:hover { color: var(--white); }
+    .nav-cta { background: var(--burgundy); color: var(--white) !important; padding: 0.55rem 1.25rem; border-radius: 2px; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: all 0.3s; }
+
+    /* ── HERO BANNER ── */
+    .ann-hero {
+      padding-top: 72px;
+      background: linear-gradient(135deg, var(--navy) 0%, #2a3f52 100%);
+      padding-bottom: 0;
+    }
+    .ann-hero-inner {
+      max-width: 1100px; margin: 0 auto;
+      padding: 5rem 2rem 4rem;
+      display: flex; align-items: center; justify-content: center;
+      gap: 4rem; flex-wrap: wrap; text-align: left;
+    }
+    .ann-hero-logo img { width: 240px; height: 240px; object-fit: contain; }
+    .ann-hero-text { max-width: 520px; }
+    .ann-eyebrow { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); margin-bottom: 1rem; }
+    .ann-hero-text h1 { font-family: var(--serif); font-size: clamp(2.5rem, 5vw, 4rem); font-weight: 300; color: var(--white); line-height: 1.1; margin-bottom: 1.25rem; }
+    .ann-hero-text h1 em { font-style: italic; color: var(--gold); }
+    .ann-hero-text p { font-size: 1rem; line-height: 1.8; color: rgba(255,255,255,0.75); margin-bottom: 2rem; }
+    .ann-tagline {
+      display: inline-block;
+      font-family: var(--serif); font-size: 1.1rem; font-style: italic;
+      color: var(--gold); border-top: 1px solid rgba(201,168,76,0.4);
+      border-bottom: 1px solid rgba(201,168,76,0.4);
+      padding: 0.6rem 0; margin-bottom: 2rem;
+    }
+    .btn-gold { display: inline-block; background: var(--gold); color: var(--navy); padding: 0.85rem 2rem; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; border-radius: 2px; margin-right: 1rem; }
+    .btn-outline-white { display: inline-block; border: 2px solid rgba(255,255,255,0.4); color: var(--white); padding: 0.85rem 2rem; font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; border-radius: 2px; }
+    .ann-wave { display: block; width: 100%; height: 60px; }
+
+    /* ── SCRIPTURE STRIP ── */
+    .scripture-strip {
+      background: var(--burgundy);
+      padding: 2.5rem 2rem;
+      text-align: center;
+    }
+    .scripture-strip blockquote {
+      font-family: var(--serif); font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-style: italic; color: var(--white);
+      max-width: 700px; margin: 0 auto 0.75rem;
+      line-height: 1.6;
+    }
+    .scripture-strip cite { font-size: 0.8rem; color: rgba(255,255,255,0.65); font-style: normal; letter-spacing: 0.1em; text-transform: uppercase; }
+
+    /* ── EVENTS TIMELINE ── */
+    .ann-events { background: var(--cream); padding: 5rem 2rem; }
+    .ann-events .container { max-width: 900px; margin: 0 auto; }
+    .section-label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.25em; text-transform: uppercase; color: var(--burgundy); margin-bottom: 0.5rem; }
+    .gold-rule { width: 48px; height: 2px; background: var(--gold); margin-bottom: 1rem; }
+    .section-title { font-family: var(--serif); font-size: clamp(2rem, 4vw, 3rem); font-weight: 300; color: var(--navy); line-height: 1.15; margin-bottom: 1rem; }
+    .section-title em { font-style: italic; color: var(--burgundy); }
+    .section-body { font-size: 1rem; line-height: 1.75; color: var(--text-lt); max-width: 600px; margin-bottom: 3rem; }
+
+    .timeline { position: relative; padding-left: 2rem; }
+    .timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--gold), var(--burgundy)); }
+    .timeline-month { margin-bottom: 2.5rem; }
+    .timeline-month-label {
+      font-family: var(--serif); font-size: 1.5rem; font-weight: 600;
+      color: var(--navy); margin-bottom: 1rem;
+      position: relative;
+    }
+    .timeline-month-label::before {
+      content: ''; position: absolute; left: -2.5rem; top: 50%;
+      transform: translateY(-50%);
+      width: 14px; height: 14px; border-radius: 50%;
+      background: var(--gold); border: 2px solid var(--white);
+      box-shadow: 0 0 0 2px var(--gold);
+    }
+    .timeline-event {
+      background: var(--white); border-radius: 4px;
+      padding: 1.25rem 1.5rem; margin-bottom: 1rem;
+      border-left: 3px solid var(--burgundy);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+    .timeline-event .ev-date { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--burgundy); margin-bottom: 0.3rem; }
+    .timeline-event .ev-title { font-family: var(--serif); font-size: 1.2rem; font-weight: 600; color: var(--navy); margin-bottom: 0.3rem; }
+    .timeline-event .ev-time { font-size: 0.8rem; color: var(--text-lt); margin-bottom: 0.5rem; }
+    .timeline-event .ev-desc { font-size: 0.9rem; line-height: 1.65; color: var(--text); }
+
+    /* ── HISTORY SECTION ── */
+    .ann-history { background: var(--navy); padding: 5rem 2rem; }
+    .ann-history .container { max-width: 900px; margin: 0 auto; }
+    .ann-history .section-label { color: var(--gold); }
+    .ann-history .section-title { color: var(--white); }
+    .ann-history .section-body { color: rgba(255,255,255,0.7); max-width: 100%; }
+    .history-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin-top: 2rem; }
+    .history-card { background: rgba(255,255,255,0.06); border: 1px solid rgba(201,168,76,0.2); border-radius: 4px; padding: 1.75rem; }
+    .history-card .year { font-family: var(--serif); font-size: 2rem; font-weight: 600; color: var(--gold); margin-bottom: 0.5rem; }
+    .history-card p { font-size: 0.9rem; line-height: 1.7; color: rgba(255,255,255,0.7); }
+
+    /* ── CTA ── */
+    .ann-cta { background: var(--cream); padding: 4rem 2rem; text-align: center; }
+    .ann-cta h2 { font-family: var(--serif); font-size: clamp(1.8rem, 3vw, 2.5rem); color: var(--navy); margin-bottom: 1rem; }
+    .ann-cta p { font-size: 1rem; color: var(--text-lt); max-width: 500px; margin: 0 auto 2rem; line-height: 1.75; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--navy); padding: 2rem; text-align: center; }
+    footer p { font-size: 0.8rem; color: rgba(255,255,255,0.4); }
+    footer a { color: var(--gold); }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 768px) {
+      nav { padding: 0 1.5rem; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .ann-hero-inner { padding: 3rem 1.5rem 2rem; gap: 2rem; text-align: center; }
+      .ann-hero-logo img { width: 160px; height: 160px; }
+      .timeline { padding-left: 1.5rem; }
+      .timeline-month-label::before { left: -2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── NAV ── -->
+  <nav>
+    <a href="index.html" class="nav-logo">
+      <div class="logo-mark">
+        <img src="images/DOC-Chalice-Solid-Red.svg" alt="Disciples of Christ Chalice" style="width:36px; height:auto;" />
+      </div>
+      <div class="logo-text">
+        First Christian Church
+        <small>Disciples of Christ · Harrison, AR</small>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About Us</a></li>
+      <li><a href="index.html#worship">Worship</a></li>
+      <li><a href="index.html#connect">Connect</a></li>
+      <li><a href="index.html#events">Events</a></li>
+      <li><a href="index.html#youth">Youth &amp; Kids</a></li>
+      <li><a href="index.html#contact">Contact</a></li>
+      <li><a href="index.html" class="nav-cta">← Back to Home</a></li>
+    </ul>
+    <button class="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ── HERO ── -->
+  <div class="ann-hero">
+    <div class="ann-hero-inner">
+      <div class="ann-hero-logo">
+        <img src="images/fcc150_logo.png" alt="First Christian Church 150th Anniversary Logo" />
+      </div>
+      <div class="ann-hero-text">
+        <div class="ann-eyebrow">1876 · Sesquicentennial · 2026</div>
+        <h1>150 Years of <em>Loving God —<br>Loving Others</em></h1>
+        <div class="ann-tagline">"Gifted to Serve" · Harrison, Arkansas</div>
+        <p>On May 18, 2026, First Christian Church (Disciples of Christ) celebrates 150 years of faith, community, and service in Harrison, Arkansas. Join us throughout the year as we reflect on our past, celebrate the present, and look toward the next 150 years.</p>
+        <a href="#events" class="btn-gold">See All Events</a>
+        <a href="index.html#contact" class="btn-outline-white">Get Involved</a>
+      </div>
+    </div>
+    <svg class="ann-wave" viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,60 C360,0 1080,60 1440,20 L1440,60 Z" fill="#8b1a2b"/>
+    </svg>
+  </div>
+
+  <!-- ── SCRIPTURE ── -->
+  <div class="scripture-strip">
+    <blockquote>"Love the Lord your God with all your heart, soul, and mind... Love others as much as you love yourself."</blockquote>
+    <cite>Matthew 22:37-39 (CEV)</cite>
+  </div>
+
+  <!-- ── EVENTS TIMELINE ── -->
+  <section class="ann-events" id="events">
+    <div class="container">
+      <div class="section-label">Celebration Schedule</div>
+      <div class="gold-rule"></div>
+      <h2 class="section-title">150th Anniversary <em>Events</em></h2>
+      <p class="section-body">A year-long celebration of 150 years of faith in Harrison. All are welcome at every event!</p>
+
+      <div class="timeline">
+
+        <div class="timeline-month">
+          <div class="timeline-month-label">May 2026</div>
+          <div class="timeline-event">
+            <div class="ev-date">Monday, May 18</div>
+            <div class="ev-title">🎉 150th Anniversary Kickoff!</div>
+            <div class="ev-time">5:45 PM Service · Drop-in Communion 6:00–7:00 PM · Original FCC Site, 500 South Pine Street</div>
+            <div class="ev-desc">We gather at the original site of FCC-Harrison — now Mr. Chris Carico's Edward Jones office across from Creekside Community Center — for a service and drop-in communion celebrating this historic milestone.</div>
+          </div>
+          <div class="timeline-event">
+            <div class="ev-date">Wednesday, May 20</div>
+            <div class="ev-title">🐟 Fish Fry &amp; "15 Decades of Disciples" Trivia Game</div>
+            <div class="ev-time">Fish Fry 5:15 PM · Trivia Game 6:15 PM · Fellowship Hall</div>
+            <div class="ev-desc">Our last Wednesday night of the Spring! Enjoy an annual fish fry followed by Church History Trivia. Teams compete to become "Chalice Champions!"</div>
+          </div>
+          <div class="timeline-event">
+            <div class="ev-date">Sunday, May 31</div>
+            <div class="ev-title">✝️ "The Community with a Story of Faithfulness"</div>
+            <div class="ev-time">9:00 AM · Special Combined Worship Service</div>
+            <div class="ev-desc">A special 5th Sunday combined worship service celebrating our community of faith.</div>
+          </div>
+        </div>
+
+        <div class="timeline-month">
+          <div class="timeline-month-label">June 2026</div>
+          <div class="timeline-event">
+            <div class="ev-date">Tuesday–Thursday, June 16–18</div>
+            <div class="ev-title">🧩 #KidsConnect Vacation Bible School</div>
+            <div class="ev-time">5:30–8:00 PM · Fellowship Hall · Ages 3 through 5th Grade</div>
+            <div class="ev-desc">Games, crafts, Bible stories, food, and music! Register by calling (870) 741-5757 or emailing fccdocharrison@gmail.com.</div>
+          </div>
+          <div class="timeline-event">
+            <div class="ev-date">Sunday, June 21</div>
+            <div class="ev-title">🎊 VBS Celebration Sunday</div>
+            <div class="ev-time">9:00 AM &amp; 11:00 AM</div>
+            <div class="ev-desc">Celebrate the conclusion of Vacation Bible School with our church family at both worship services.</div>
+          </div>
+        </div>
+
+        <div class="timeline-month">
+          <div class="timeline-month-label">July 2026</div>
+          <div class="timeline-event">
+            <div class="ev-date">Saturday, July 4</div>
+            <div class="ev-title">🇺🇸 4th of July Celebration</div>
+            <div class="ev-time">6:00 PM</div>
+            <div class="ev-desc">Join us for a patriotic celebration on Independence Day!</div>
+          </div>
+        </div>
+
+        <div class="timeline-month">
+          <div class="timeline-month-label">August 2026</div>
+          <div class="timeline-event">
+            <div class="ev-date">Sunday, August 16</div>
+            <div class="ev-title">🍦 Sundae Sunday &amp; "15 Decades of Disciples" Trivia</div>
+            <div class="ev-time">Ice Cream Social 5:00 PM · Trivia Game 6:00 PM · The Crossing</div>
+            <div class="ev-desc">Ice Cream Social with Homemade Ice Cream Contest at The Crossing, followed by another round of Church History Trivia!</div>
+          </div>
+        </div>
+
+        <div class="timeline-month">
+          <div class="timeline-month-label">September 2026</div>
+          <div class="timeline-event">
+            <div class="ev-date">Sunday, September 20</div>
+            <div class="ev-title">✝️ "Faithful Servants Sunday" &amp; Church Picnic</div>
+            <div class="ev-time">Special Combined Worship 9:00 AM · Church Hillside Photo &amp; Picnic 11:00 AM</div>
+            <div class="ev-desc">A special combined worship service honoring faithful servants, followed by a church hillside photo and picnic on the grounds.</div>
+          </div>
+        </div>
+
+        <div class="timeline-month">
+          <div class="timeline-month-label">October 2026</div>
+          <div class="timeline-event">
+            <div class="ev-date">Saturday, October 17</div>
+            <div class="ev-title">🏛️ Heritage Luncheon &amp; Church Tours</div>
+            <div class="ev-time">Luncheon 12:00 PM</div>
+            <div class="ev-desc">"Roots &amp; Reflections: Our Heritage Display" · "Transformed: Stories of Faith" · "Joyful Noise Gathering" · Tours of the Church</div>
+          </div>
+          <div class="timeline-event">
+            <div class="ev-date">Sunday, October 18</div>
+            <div class="ev-title">✝️ "150 Years: Remembering, Rejoicing, Renewing"</div>
+            <div class="ev-time">9:00 AM · Special Combined Worship Service</div>
+            <div class="ev-desc">A special combined service honoring past ministers and Timothys who have shaped our congregation over 150 years.</div>
+          </div>
+        </div>
+
+        <div class="timeline-month">
+          <div class="timeline-month-label">November 2026</div>
+          <div class="timeline-event">
+            <div class="ev-date">Saturday, November 7</div>
+            <div class="ev-title">🛍️ FCC's Merry &amp; Antiques Market</div>
+            <div class="ev-time">10:00 AM–4:00 PM · Soup Luncheon 11:00 AM–2:00 PM ($10)</div>
+            <div class="ev-desc">Hosted by Esther Circle. All proceeds benefit The Made to Play Foundation.</div>
+          </div>
+          <div class="timeline-event">
+            <div class="ev-date">Sunday, November 29</div>
+            <div class="ev-title">🌿 "Hanging of the Greens"</div>
+            <div class="ev-time">9:00 AM · Special Combined Worship Service</div>
+            <div class="ev-desc">Welcome the Advent season with new Chrismons and a special combined worship service.</div>
+          </div>
+        </div>
+
+        <div class="timeline-month">
+          <div class="timeline-month-label">December 2026</div>
+          <div class="timeline-event">
+            <div class="ev-date">Thursday, December 24</div>
+            <div class="ev-title">🕯️ Christmas Eve Candlelight Service</div>
+            <div class="ev-time">6:00 PM · Special Worship Service</div>
+            <div class="ev-desc">"Continuing to Walk in Christ's Light" — Close out our 150th anniversary year with a candlelight Christmas Eve service.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ── HISTORY ── -->
+  <section class="ann-history">
+    <div class="container">
+      <div class="section-label">Our Story</div>
+      <div class="gold-rule"></div>
+      <h2 class="section-title" style="color:var(--white);">150 Years of <em style="color:var(--gold);">Faith in Harrison</em></h2>
+      <p class="section-body">The best research available indicates that the average lifespan of a church is 80 to 120 years. Churches that survive and thrive over 100 years are the exception, not the norm. First Christian Church is one of those exceptions — and we give all the glory to God.</p>
+      <div class="history-grid">
+        <div class="history-card">
+          <div class="year">1876</div>
+          <p>First Christian Church is founded in Harrison, Arkansas — the same year the town of Harrison was incorporated.</p>
+        </div>
+        <div class="history-card">
+          <div class="year">1892</div>
+          <p>The congregation moves into a new church at the corner of West Stephenson and South Pine, with 153 members.</p>
+        </div>
+        <div class="history-card">
+          <div class="year">1957</div>
+          <p>The church moves to its current home at 915 South Maple Street, with a dedication service on November 24.</p>
+        </div>
+        <div class="history-card">
+          <div class="year">1987</div>
+          <p>FCC helps found Ozark Share &amp; Care, and has been a vital part of their community ministry ever since.</p>
+        </div>
+        <div class="history-card">
+          <div class="year">Today</div>
+          <p>150 years of Loving God and Loving Others — and we're just getting started. All are welcome at the Lord's Table.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CTA ── -->
+  <section class="ann-cta">
+    <h2>Join Us for the <em style="font-family:var(--serif); font-style:italic; color:var(--burgundy);">Celebration</em></h2>
+    <p>All are welcome at every anniversary event. For more information, contact the church office.</p>
+    <a href="tel:+18707415757" class="btn-gold" style="margin-right:1rem;">(870) 741-5757</a>
+    <a href="index.html#contact" class="btn-outline-white" style="border:2px solid var(--burgundy); color:var(--burgundy);">Send a Message</a>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <p>First Christian Church (Disciples of Christ) · 915 South Maple Street, Harrison, AR 72601 · <a href="mailto:fccdocharrison@gmail.com">fccdocharrison@gmail.com</a> · <a href="index.html">← Back to Home</a></p>
+  </footer>
+
+</body>
+</html>
