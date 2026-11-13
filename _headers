@@ -1,0 +1,4 @@
+# Let browsers and caches keep photos for a week instead of asking again on every visit.
+# If you replace a photo but keep the same file name, some visitors may see the old one for up to a week.
+/images/*
+  Cache-Control: public, max-age=604800
